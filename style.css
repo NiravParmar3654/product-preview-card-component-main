@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --bgColor: 30, 38%, 92%;
+    --White-color: 0, 0%, 100%; 
+    --font-color: 228, 12%, 48%;
+    --Black-color: 212, 21%, 14%;
+    --Green-color-500: 158, 36%, 37%;
+    --Green-color-700: 158, 42%, 18%;
+
+    --fw-I: 500;
+    --fw-II: 700;
+
+    --font-family-I: 'Montserrat'; 
+    --font-family-II: 'Fraunces';
+
+    --font-size: 14px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family-I);
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: hsl(var(--bgColor));
+    display: grid;
+    place-items: center;
+}
+
+.main{
+    background-color: hsl(var(--White-color));
+    height: 95%;
+    width: 95%;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: 1fr;
+    border-radius: var(--font-size);
+}
+
+.main .imageBox{
+    max-height: 100%;
+    width: 100%; 
+    background: #fff 50% 0 / 100% 100% url(./images/image-product-mobile.jpg) no-repeat;
+    background-size: cover;
+}
+
+@media (min-width: 600px){
+    .main{
+        max-width: 580px;
+        height: 65vh;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 1fr;
+    }
+
+    .main .imageBox{
+        background: #fff 50% 0 / 100% 100% url(./images/image-product-desktop.jpg) no-repeat;
+    }
+}
+
+.main .info{
+    height: auto;
+    width: 100%;
+    padding: 2rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.main .info .first-heading{
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: hsl(var(--font-color));
+    font-size: var(--font-size);
+}
+
+.main .info .second-heading{
+    font-weight: var(--fw-II);
+    color: hsl(var(--Black-color));
+    font-family: var(--font-family-II);
+    font-size: 2rem;
+    /* padding-right: 1.8rem; */
+    line-height: 2rem;
+}
+
+.main .info .pera{
+    font-size: var(--font-size);
+    font-weight: 300;
+    color: hsl(var(--font-color));
+}
+
+.main .info .price-box{
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    padding-right: 1.5rem;
+}
+
+.main .info .price-box .new-price{
+    font-size: 1.7rem;
+    color: hsl(var(--Green-color-500));
+    font-weight: var(--fw-II);
+    font-family: var(--font-family-II);
+}
+                   
+.main .info .price-box .old-price{
+    text-decoration: line-through;
+    font-size: 0.8rem;
+    color: hsl(var(--font-color));
+}
+
+.main .info .btn{
+    border: 0;
+    background-color: hsl(var(--Green-color-500));
+    border-radius: 8px;
+    font-size: var(--font-size);
+    padding: 0.6rem 0;
+    color: hsl(0, 0%, 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.main .info .btn:is(:hover, :focus){
+    background-color: hsl(var(--Green-color-700));
+    cursor: pointer;
+}
